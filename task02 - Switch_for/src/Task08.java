@@ -12,19 +12,24 @@ public class Task08 {
         int lastSumm = 100;
         int summ = 0;
         int digit;
+
         for (int j = 1; lastSumm > 9; j++) {
             for (int i = 1; n != 0; i++) {
                 digit = n % 10;
                 n -= digit;
                 n /= 10;
                 summ += digit;
+                lastSumm = summ;
             }
-            lastSumm = summ;
-            n = summ;
-
+            if (summ > 9) {
+                n = summ;
+            }
         }
 
-        System.out.println(lastSumm);
 
+        System.out.println(summ);
     }
+
+
 }
+
